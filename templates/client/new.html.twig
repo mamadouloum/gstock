@@ -1,0 +1,27 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Nouveau Client{% endblock %}
+
+{% block body %}
+<div class ="container">
+            <div class ="panel panel-primary">
+                <div class ="panel-heading">
+               <i class=""></i>Client
+            </div>
+             
+                <div class ="panel-body">
+    <table class="table table-condensed">
+    <h1>Ajouter un Client</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <td><button class="btn btn-danger">{{ button_label|default('Enregistrer') }}</button></td>
+{{ form_end(form) }}
+
+
+    <td><a href="{{ path('client_index') }}"class="btn btn-warning">Retour à la liste</a></td>
+    </table>
+</div>
+</div>
+</div>
+{% endblock %}

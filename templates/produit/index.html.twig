@@ -1,0 +1,54 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Produit index{% endblock %}
+
+{% block body %}
+    <div class ="container">
+            <div class ="panel panel-primary">
+                <div class ="panel-heading">
+               <i class=""></i>Liste Produit
+            </div>
+             
+                <div class ="panel-body">
+
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Pa</th>
+                <th>Pv</th>
+                <th>Tva</th>
+                <th>Stock</th>
+                <th>Stkinit</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.libelle }}</td>
+                <td>{{ produit.pa }}</td>
+                <td>{{ produit.pv }}</td>
+                <td>{{ produit.tva }}</td>
+                <td>{{ produit.stock }}</td>
+                <td>{{ produit.stkinit }}</td>
+                <td>
+                    <a href="{{ path('produit_show', {'id': produit.id}) }}"class="btn btn-success">Voir</a>
+                    <a href="{{ path('produit_edit', {'id': produit.id}) }}"class="btn btn-warning">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('produit_new') }}"class="btn btn-warning">Créer nouveau</a>
+</div>
+</div>
+</div>
+{% endblock %}

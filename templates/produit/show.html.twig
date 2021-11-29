@@ -1,0 +1,57 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+<div class ="container">
+            <div class ="panel panel-primary">
+                <div class ="panel-heading">
+               <i class=""></i>Liste Produit
+            </div>
+             
+                <div class ="panel-body">
+
+    <table class="table table-condensed">
+    <h1>Produit</h1>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ produit.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Pa</th>
+                <td>{{ produit.pa }}</td>
+            </tr>
+            <tr>
+                <th>Pv</th>
+                <td>{{ produit.pv }}</td>
+            </tr>
+            <tr>
+                <th>Tva</th>
+                <td>{{ produit.tva }}</td>
+            </tr>
+            <tr>
+                <th>Stock</th>
+                <td>{{ produit.stock }}</td>
+            </tr>
+            <tr>
+                <th>Stkinit</th>
+                <td>{{ produit.stkinit }}</td>
+            </tr>
+        </tbody>
+   
+
+    <td><a href="{{ path('produit_index') }}"class="btn btn-warning">Retour à la liste</a></td>
+
+    <td><a href="{{ path('produit_edit', {'id': produit.id}) }}"class="btn btn-danger">Editer</a></td>
+
+    <td>{{ include('produit/_delete_form.html.twig') }}</td>
+     </table>
+</div>
+</div>
+</div>
+{% endblock %}

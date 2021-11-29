@@ -1,0 +1,77 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Client{% endblock %}
+
+{% block body %}
+<div class ="container">
+            <div class ="panel panel-primary">
+                <div class ="panel-heading">
+               <i class=""></i>Gestion Famille
+            </div>
+             
+                <div class ="panel-body">
+    <h1>Client</h1>
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client.id }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ client.designation }}</td>
+            </tr>
+            <tr>
+                <th>RespComm</th>
+                <td>{{ client.RespComm }}</td>
+            </tr>
+            <tr>
+                <th>RespFinan</th>
+                <td>{{ client.respFinan }}</td>
+            </tr>
+            <tr>
+                <th>AdrLiv</th>
+                <td>{{ client.adrLiv }}</td>
+            </tr>
+            <tr>
+                <th>AdrFacture</th>
+                <td>{{ client.adrFacture }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ client.tel }}</td>
+            </tr>
+            <tr>
+                <th>Portable</th>
+                <td>{{ client.portable }}</td>
+            </tr>
+            <tr>
+                <th>Fax</th>
+                <td>{{ client.fax }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ client.email }}</td>
+            </tr>
+            <tr>
+                <th>SoldeInit</th>
+                <td>{{ client.soldeInit }}</td>
+            </tr>
+            <tr>
+                <th>Solde</th>
+                <td>{{ client.solde }}</td>
+            </tr>
+        </tbody>
+    
+
+    <td><a href="{{ path('client_index') }}"class="btn btn-warning">Retour à la liste</a></td>
+
+    <td><a href="{{ path('client_edit', {'id': client.id}) }}"class="btn btn-danger">Editer</a></td>
+
+    <td>{{ include('client/_delete_form.html.twig') }}</td>
+</table>
+</div>
+</div>
+</div>
+{% endblock %}

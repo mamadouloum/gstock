@@ -1,0 +1,24 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}New Produit{% endblock %}
+
+{% block body %}
+<div class ="container">
+            <div class ="panel panel-primary">
+                <div class ="panel-heading">
+               <i class=""></i><strong> Produit</strong>
+            </div>
+             
+                <div class ="panel-body">
+
+    <table class="table table-condensed">
+    <h1>Créer nouveau Produit</h1>
+
+    {{ include('produit/_form.html.twig') }}
+
+    <a href="{{ path('produit_index') }}"class="btn btn-warning">Retour à la liste</a>
+</table>
+</div>
+</div>
+</div>
+{% endblock %}

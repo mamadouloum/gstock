@@ -1,0 +1,24 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Edit Produit{% endblock %}
+
+{% block body %}
+    <div class ="container">
+            <div class ="panel panel-primary">
+                <div class ="panel-heading">
+               <i class=""></i>Liste Produit
+            </div>
+             
+                <div class ="panel-body">
+    <table class="table table-condensed">
+
+    {{ include('produit/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('produit_index') }}"class="btn btn-warning">Retour à la liste</a>
+
+    {{ include('produit/_delete_form.html.twig') }}
+</table>
+</div>
+</div>
+</div>
+{% endblock %}
